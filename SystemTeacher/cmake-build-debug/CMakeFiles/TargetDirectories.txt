@@ -1,0 +1,3 @@
+D:/PROJECT/CLions/SystemTeacher/cmake-build-debug/CMakeFiles/SystemTeacher.dir
+D:/PROJECT/CLions/SystemTeacher/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/PROJECT/CLions/SystemTeacher/cmake-build-debug/CMakeFiles/rebuild_cache.dir
