@@ -105,8 +105,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/PROJECT/CLions/SystemTeacher/cmake-build-debug",
-		"source" : "D:/PROJECT/CLions/SystemTeacher"
+		"build" : "D:/PROJECT/workSpace/SystemTeacher/cmake-build-debug",
+		"source" : "D:/PROJECT/workSpace/SystemTeacher"
 	},
 	"version" : 
 	{

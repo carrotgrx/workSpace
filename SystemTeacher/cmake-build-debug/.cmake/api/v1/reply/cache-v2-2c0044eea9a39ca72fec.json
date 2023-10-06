@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/PROJECT/CLions/SystemTeacher/cmake-build-debug"
+			"value" : "d:/PROJECT/workSpace/SystemTeacher/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/PROJECT/CLions/SystemTeacher/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "D:/PROJECT/workSpace/SystemTeacher/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/PROJECT/CLions/SystemTeacher"
+			"value" : "D:/PROJECT/workSpace/SystemTeacher"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/PROJECT/CLions/SystemTeacher/cmake-build-debug"
+			"value" : "D:/PROJECT/workSpace/SystemTeacher/cmake-build-debug"
 		},
 		{
 			"name" : "SystemTeacher_IS_TOP_LEVEL",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/PROJECT/CLions/SystemTeacher"
+			"value" : "D:/PROJECT/workSpace/SystemTeacher"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
