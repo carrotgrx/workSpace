@@ -55,14 +55,14 @@ build CMakeFiles/SystemTeacher.dir/main.c.obj: C_COMPILER__SystemTeacher_unscann
   OBJECT_DIR = CMakeFiles\SystemTeacher.dir
   OBJECT_FILE_DIR = CMakeFiles\SystemTeacher.dir
 
-build CMakeFiles/SystemTeacher.dir/view.c.obj: C_COMPILER__SystemTeacher_unscanned_Debug D$:/PROJECT/workSpace/SystemTeacher/view.c || cmake_object_order_depends_target_SystemTeacher
-  DEP_FILE = CMakeFiles\SystemTeacher.dir\view.c.obj.d
+build CMakeFiles/SystemTeacher.dir/api.c.obj: C_COMPILER__SystemTeacher_unscanned_Debug D$:/PROJECT/workSpace/SystemTeacher/api.c || cmake_object_order_depends_target_SystemTeacher
+  DEP_FILE = CMakeFiles\SystemTeacher.dir\api.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\SystemTeacher.dir
   OBJECT_FILE_DIR = CMakeFiles\SystemTeacher.dir
 
-build CMakeFiles/SystemTeacher.dir/api.c.obj: C_COMPILER__SystemTeacher_unscanned_Debug D$:/PROJECT/workSpace/SystemTeacher/api.c || cmake_object_order_depends_target_SystemTeacher
-  DEP_FILE = CMakeFiles\SystemTeacher.dir\api.c.obj.d
+build CMakeFiles/SystemTeacher.dir/view.c.obj: C_COMPILER__SystemTeacher_unscanned_Debug D$:/PROJECT/workSpace/SystemTeacher/view.c || cmake_object_order_depends_target_SystemTeacher
+  DEP_FILE = CMakeFiles\SystemTeacher.dir\view.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\SystemTeacher.dir
   OBJECT_FILE_DIR = CMakeFiles\SystemTeacher.dir
@@ -75,7 +75,7 @@ build CMakeFiles/SystemTeacher.dir/api.c.obj: C_COMPILER__SystemTeacher_unscanne
 #############################################
 # Link the executable SystemTeacher.exe
 
-build SystemTeacher.exe: C_EXECUTABLE_LINKER__SystemTeacher_Debug CMakeFiles/SystemTeacher.dir/main.c.obj CMakeFiles/SystemTeacher.dir/view.c.obj CMakeFiles/SystemTeacher.dir/api.c.obj
+build SystemTeacher.exe: C_EXECUTABLE_LINKER__SystemTeacher_Debug CMakeFiles/SystemTeacher.dir/main.c.obj CMakeFiles/SystemTeacher.dir/api.c.obj CMakeFiles/SystemTeacher.dir/view.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SystemTeacher.dir

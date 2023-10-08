@@ -1,0 +1,13 @@
+# ninja log v5
+0	304	7184621740034171	CMakeFiles/SystemTeacher.dir/main.c.obj	b0eb16124b6f29e4
+32	900	7184621745994196	CMakeFiles/SystemTeacher.dir/api.c.obj	a5063c150408ca96
+17	913	7184621746125751	CMakeFiles/SystemTeacher.dir/view.c.obj	ce9b85a5d1657b83
+913	1196	7184621748902591	SystemTeacher.exe	880c11304423d39a
+19	867	7184623131685167	CMakeFiles/SystemTeacher.dir/main.c.obj	b0eb16124b6f29e4
+3	869	7184623131715158	CMakeFiles/SystemTeacher.dir/view.c.obj	ce9b85a5d1657b83
+32	870	7184623131725070	CMakeFiles/SystemTeacher.dir/api.c.obj	a5063c150408ca96
+870	1010	7184623132974066	SystemTeacher.exe	880c11304423d39a
+2	746	7184624069788059	CMakeFiles/SystemTeacher.dir/view.c.obj	ce9b85a5d1657b83
+746	880	7184624071085899	SystemTeacher.exe	880c11304423d39a
+3	956	7184674970470309	CMakeFiles/SystemTeacher.dir/view.c.obj	ce9b85a5d1657b83
+31	957	7184674970470309	CMakeFiles/SystemTeacher.dir/main.c.obj	b0eb16124b6f29e4

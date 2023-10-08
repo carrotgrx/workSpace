@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(SystemTeacher main.c
         lib.h
-        view.c
-        view.h
         api.c
-        api.h)
+        api.h
+        view.c
+        view.h)

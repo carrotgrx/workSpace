@@ -7,11 +7,22 @@
 
 #include "view.h"
 
+typedef struct user *User;
 typedef struct course *Course;
 typedef struct teacher *Teacher;
 typedef struct homework *Homework;
 typedef struct tutor *Tutor;
 typedef struct student *Student;
+
+//用户信息
+typedef struct user {
+    int id;                 //用户编号
+    char username[20];      //用户名
+    char password[20];      //密码
+    int type;               //用户类型 0-管理员 1-教师 2-学生
+    User left;
+    User right;
+};
 
 //课程信息
 typedef struct course {
@@ -22,7 +33,8 @@ typedef struct course {
     int student_id[10][200];    //选课学生编号
     int grade[10][200];         //选课学生平时成绩
     int evaluation[10][200];    //选课学生评价
-    Course next;
+    Course left;
+    Course right;
 };
 
 //教师信息
@@ -30,7 +42,8 @@ typedef struct teacher {
     int id;                 //教师编号
     char name[20];          //教师姓名
     char emile[20];         //教师邮箱
-    Teacher next;
+    Teacher left;
+    Teacher right;
 };
 
 //作业信息
@@ -41,7 +54,8 @@ typedef struct homework {
     char content[200];      //作业内容
     char deadline[20];      //作业截止时间  xxxx-xx-xx xx:xx:xx
     int status;             //作业批改状态 0-未完成 1-已完成
-    Homework next;
+    Homework left;
+    Homework right;
 };
 
 //答疑/辅导信息
@@ -49,8 +63,9 @@ typedef struct tutor {
     int id;                 //答疑/辅导编号
     int course_id;          //答疑/辅导课程
     int teacher_id;         //答疑/辅导教师
-    char time[20];          //答疑/辅导时间
-    Tutor next;
+    char time[20];          //答疑/辅导时间 xxxx-xx-xx xx:xx:xx
+    Tutor left;
+    Tutor right;
 };
 
 //学生信息
@@ -66,22 +81,16 @@ typedef struct student {
     int bad;                //学生不良记录情况
     int record[10];         //不良记录
     int other[3][10];       // 0-竞赛奖项 1-学术得分 2-其他得分
-    Student next;
+    Student left;
+    Student right;
 };
 
-extern View QUERY;
-extern View MAIN;
-extern int Count;
-
-void initAPI(void);
-void add(void);
-void modify(void);
-void del(void);
-void query(void);
-void import(void);
-void save(void);
-
-int customPrint(short c, int x, int y, const char * __restrict__ _Format, ...);
+User createUser(void);
+Course createCourse(void);
+Teacher createTeacher(void);
+Homework createHomework(void);
+Tutor createTutor(void);
+Student createStudent(void);
 
 
 #endif //SYSTEMTEACHER_API_H

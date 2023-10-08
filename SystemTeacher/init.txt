@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+
+#pragma comment(lib, "ws2_32.lib")
+
+#define SERVER_ADDRESS "your_smtp_server_address" // SMTP服务器地址
+#define SERVER_PORT 25 // SMTP服务器端口
+#define EMAIL_FROM "your_email@example.com" // 发件人邮箱
+#define EMAIL_TO "recipient@example.com" // 收件人邮箱
+#define EMAIL_SUBJECT "测试主题" // 邮件主题
+#define EMAIL_BODY "这是一封测试邮件。" // 邮件正文
+
+int main() {
+    WSADATA wsaData;
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        perror("WSAStartup 失败");
+        return 1;
+    }
+
+    // 创建套接字
+    SOCKET clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+    if (clientSocket == INVALID_SOCKET) {
+        perror("套接字创建失败");
+        WSACleanup();
+        return 1;
+    }
+
+    // 配置服务器地址
+    struct sockaddr_in serverAddr;
+    serverAddr.sin_family = AF_INET;
+    serverAddr.sin_port = htons(SERVER_PORT);
+    inet_pton(AF_INET, SERVER_ADDRESS, &(serverAddr.sin_addr));
+
+    // 连接到SMTP服务器
+    if (connect(clientSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR) {
+        perror("连接失败");
+        closesocket(clientSocket);
+        WSACleanup();
+        return 1;
+    }
+
+    char buffer[1024];
+    memset(buffer, 0, sizeof(buffer));
+
+    // 读取服务器的响应
+    if (recv(clientSocket, buffer, sizeof(buffer), 0) == SOCKET_ERROR) {
+        perror("接收失败");
+        closesocket(clientSocket);
+        WSACleanup();
+        return 1;
+    }
+
+    printf("服务器响应：%s\n", buffer);
+
+    // 发送SMTP命令（示例中为发送邮件）
+    char* emailCmd = "EHLO localhost\r\n";
+    send(clientSocket, emailCmd, strlen(emailCmd), 0);
+    memset(buffer, 0, sizeof(buffer));
+    recv(clientSocket, buffer, sizeof(buffer), 0);
+    printf("服务器响应：%s\n", buffer);
+
+    // 发送更多SMTP命令以设置邮件信息（例如发件人、收件人、主题、正文等）
+
+    // 发送邮件正文
+    char emailContent[1024];
+    snprintf(emailContent, sizeof(emailContent),
+             "From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n%s\r\n.\r\n", EMAIL_FROM, EMAIL_TO, EMAIL_SUBJECT, EMAIL_BODY);
+    send(clientSocket, emailContent, strlen(emailContent), 0);
+    memset(buffer, 0, sizeof(buffer));
+    recv(clientSocket, buffer, sizeof(buffer), 0);
+    printf("服务器响应：%s\n", buffer);
+
+    // 关闭连接
+    char* quitCmd = "QUIT\r\n";
+    send(clientSocket, quitCmd, strlen(quitCmd), 0);
+    memset(buffer, 0, sizeof(buffer));
+    recv(clientSocket, buffer, sizeof(buffer), 0);
+    printf("服务器响应：%s\n", buffer);
+
+    // 关闭套接字和WSA
+    closesocket(clientSocket);
+    WSACleanup();
+
+    return 0;
+}
