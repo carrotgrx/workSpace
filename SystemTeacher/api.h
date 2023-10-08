@@ -14,73 +14,73 @@ typedef struct homework *Homework;
 typedef struct tutor *Tutor;
 typedef struct student *Student;
 
-//ç”¨æˆ·ä¿¡æ¯
+//ÓÃ»§ĞÅÏ¢
 typedef struct user {
-    int id;                 //ç”¨æˆ·ç¼–å·
-    char username[20];      //ç”¨æˆ·å
-    char password[20];      //å¯†ç 
-    int type;               //ç”¨æˆ·ç±»å‹ 0-ç®¡ç†å‘˜ 1-æ•™å¸ˆ 2-å­¦ç”Ÿ
+    int id;                 //ÓÃ»§±àºÅ
+    char username[20];      //ÓÃ»§Ãû
+    char password[20];      //ÃÜÂë
+    int type;               //ÓÃ»§ÀàĞÍ 0-¹ÜÀíÔ± 1-½ÌÊ¦ 2-Ñ§Éú
     User left;
     User right;
 };
 
-//è¯¾ç¨‹ä¿¡æ¯
+//¿Î³ÌĞÅÏ¢
 typedef struct course {
-    int id;                     //è¯¾ç¨‹ç¼–å·
-    char name[20];              //è¯¾ç¨‹åç§°
-    int credit;                 //è¯¾ç¨‹å­¦åˆ†
-    int teacher_id[10];         //æˆè¯¾æ•™å¸ˆç¼–å·
-    int student_id[10][200];    //é€‰è¯¾å­¦ç”Ÿç¼–å·
-    int grade[10][200];         //é€‰è¯¾å­¦ç”Ÿå¹³æ—¶æˆç»©
-    int evaluation[10][200];    //é€‰è¯¾å­¦ç”Ÿè¯„ä»·
+    int id;                     //¿Î³Ì±àºÅ
+    char name[20];              //¿Î³ÌÃû³Æ
+    int credit;                 //¿Î³ÌÑ§·Ö
+    int teacher_id[10];         //ÊÚ¿Î½ÌÊ¦±àºÅ
+    int student_id[10][200];    //Ñ¡¿ÎÑ§Éú±àºÅ
+    int grade[10][200];         //Ñ¡¿ÎÑ§ÉúÆ½Ê±³É¼¨
+    int evaluation[10][200];    //Ñ¡¿ÎÑ§ÉúÆÀ¼Û
     Course left;
     Course right;
 };
 
-//æ•™å¸ˆä¿¡æ¯
+//½ÌÊ¦ĞÅÏ¢
 typedef struct teacher {
-    int id;                 //æ•™å¸ˆç¼–å·
-    char name[20];          //æ•™å¸ˆå§“å
-    char emile[20];         //æ•™å¸ˆé‚®ç®±
+    int id;                 //½ÌÊ¦±àºÅ
+    char name[20];          //½ÌÊ¦ĞÕÃû
+    char emile[20];         //½ÌÊ¦ÓÊÏä
     Teacher left;
     Teacher right;
 };
 
-//ä½œä¸šä¿¡æ¯
+//×÷ÒµĞÅÏ¢
 typedef struct homework {
-    int id;                 //ä½œä¸šç¼–å·
-    int course_id;          //ä½œä¸šæ‰€å±è¯¾ç¨‹
-    int teacher_id;         //ä½œä¸šå¸ƒç½®æ•™å¸ˆ
-    char content[200];      //ä½œä¸šå†…å®¹
-    char deadline[20];      //ä½œä¸šæˆªæ­¢æ—¶é—´  xxxx-xx-xx xx:xx:xx
-    int status;             //ä½œä¸šæ‰¹æ”¹çŠ¶æ€ 0-æœªå®Œæˆ 1-å·²å®Œæˆ
+    int id;                 //×÷Òµ±àºÅ
+    int course_id;          //×÷ÒµËùÊô¿Î³Ì
+    int teacher_id;         //×÷Òµ²¼ÖÃ½ÌÊ¦
+    char content[200];      //×÷ÒµÄÚÈİ
+    char deadline[20];      //×÷Òµ½ØÖ¹Ê±¼ä  xxxx-xx-xx xx:xx:xx
+    int status;             //×÷ÒµÅú¸Ä×´Ì¬ 0-Î´Íê³É 1-ÒÑÍê³É
     Homework left;
     Homework right;
 };
 
-//ç­”ç–‘/è¾…å¯¼ä¿¡æ¯
+//´ğÒÉ/¸¨µ¼ĞÅÏ¢
 typedef struct tutor {
-    int id;                 //ç­”ç–‘/è¾…å¯¼ç¼–å·
-    int course_id;          //ç­”ç–‘/è¾…å¯¼è¯¾ç¨‹
-    int teacher_id;         //ç­”ç–‘/è¾…å¯¼æ•™å¸ˆ
-    char time[20];          //ç­”ç–‘/è¾…å¯¼æ—¶é—´ xxxx-xx-xx xx:xx:xx
+    int id;                 //´ğÒÉ/¸¨µ¼±àºÅ
+    int course_id;          //´ğÒÉ/¸¨µ¼¿Î³Ì
+    int teacher_id;         //´ğÒÉ/¸¨µ¼½ÌÊ¦
+    char time[20];          //´ğÒÉ/¸¨µ¼Ê±¼ä xxxx-xx-xx xx:xx:xx
     Tutor left;
     Tutor right;
 };
 
-//å­¦ç”Ÿä¿¡æ¯
+//Ñ§ÉúĞÅÏ¢
 typedef struct student {
-    int id;                 //å­¦ç”Ÿç¼–å·
-    char name[20];          //å­¦ç”Ÿå§“å
-    char emile[20];         //å­¦ç”Ÿé‚®ç®±
-    int class;              //å­¦ç”Ÿå¹´çº§
-    int course_id[10];      //å­¦ç”Ÿæ‰€é€‰è¯¾ç¨‹
-    int grade[10];          //å­¦ç”Ÿæ‰€é€‰è¯¾ç¨‹æˆç»©
-    int average;            //å­¦ç”Ÿå¹³å‡æˆç»©
-    double gpa;             //å­¦ç”Ÿå¹³å‡ç»©ç‚¹
-    int bad;                //å­¦ç”Ÿä¸è‰¯è®°å½•æƒ…å†µ
-    int record[10];         //ä¸è‰¯è®°å½•
-    int other[3][10];       // 0-ç«èµ›å¥–é¡¹ 1-å­¦æœ¯å¾—åˆ† 2-å…¶ä»–å¾—åˆ†
+    int id;                 //Ñ§Éú±àºÅ
+    char name[20];          //Ñ§ÉúĞÕÃû
+    char emile[20];         //Ñ§ÉúÓÊÏä
+    int class;              //Ñ§ÉúÄê¼¶
+    int course_id[10];      //Ñ§ÉúËùÑ¡¿Î³Ì
+    int grade[10];          //Ñ§ÉúËùÑ¡¿Î³Ì³É¼¨
+    int average;            //Ñ§ÉúÆ½¾ù³É¼¨
+    double gpa;             //Ñ§ÉúÆ½¾ù¼¨µã
+    int bad;                //Ñ§Éú²»Á¼¼ÇÂ¼Çé¿ö
+    int record[10];         //²»Á¼¼ÇÂ¼
+    int other[3][10];       // 0-¾ºÈü½±Ïî 1-Ñ§ÊõµÃ·Ö 2-ÆäËûµÃ·Ö
     Student left;
     Student right;
 };

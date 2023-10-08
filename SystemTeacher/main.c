@@ -2,16 +2,15 @@
 
 int main() {
     const char* haystack = "Hello, World!";
-    const char* needle = "World";
+    const char* needle = "123";
 
-    // åœ¨haystackä¸­æŸ¥æ‰¾needle
+    // ÔÚhaystackÖĞ²éÕÒneedle
     char* result = strstr(haystack, needle);
 
     if (result != NULL) {
-        printf("æ‰¾åˆ°äº†å…³é”®å­—ï¼š%s\n", result);
+        printf("ÕÒµ½ÁË¹Ø¼ü×Ö£º%s\n", result);
     } else {
-        printf("æœªæ‰¾åˆ°å…³é”®å­—\n");
+        printf("Î´ÕÒµ½¹Ø¼ü×Ö\n");
     }
-
     return 0;
 }

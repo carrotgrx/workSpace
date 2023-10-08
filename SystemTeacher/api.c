@@ -508,5 +508,86 @@ void deleteStudent(int id) {
 
 //≤È’“Ω·µ„
 Course findCourse(int id) {
+    if (Courses == NULL) {
+        return NULL;
+    }
+    Course temp = Courses;
+    while (temp != NULL) {
+        if (id < temp->id) {
+            temp = temp->left;
+        } else if (id > temp->id) {
+            temp = temp->right;
+        } else {
+            return temp;
+        }
+    }
+    return NULL;
+}
 
+Teacher findTeacher(int id) {
+    if (Teachers == NULL) {
+        return NULL;
+    }
+    Teacher temp = Teachers;
+    while (temp != NULL) {
+        if (id < temp->id) {
+            temp = temp->left;
+        } else if (id > temp->id) {
+            temp = temp->right;
+        } else {
+            return temp;
+        }
+    }
+    return NULL;
+}
+
+Homework findHomework(int id) {
+    if (Homeworks == NULL) {
+        return NULL;
+    }
+    Homework temp = Homeworks;
+    while (temp != NULL) {
+        if (id < temp->id) {
+            temp = temp->left;
+        } else if (id > temp->id) {
+            temp = temp->right;
+        } else {
+            return temp;
+        }
+    }
+    return NULL;
+}
+
+Tutor findTutor(int id) {
+    if (Tutors == NULL) {
+        return NULL;
+    }
+    Tutor temp = Tutors;
+    while (temp != NULL) {
+        if (id < temp->id) {
+            temp = temp->left;
+        } else if (id > temp->id) {
+            temp = temp->right;
+        } else {
+            return temp;
+        }
+    }
+    return NULL;
+}
+
+Student findStudent(int id) {
+    if (Students == NULL) {
+        return NULL;
+    }
+    Student temp = Students;
+    while (temp != NULL) {
+        if (id < temp->id) {
+            temp = temp->left;
+        } else if (id > temp->id) {
+            temp = temp->right;
+        } else {
+            return temp;
+        }
+    }
+    return NULL;
 }
