@@ -1,16 +1,10 @@
 #include "api.h"
 
 int main() {
-    const char* haystack = "Hello, World!";
-    const char* needle = "123";
-
-    // 在haystack中查找needle
-    char* result = strstr(haystack, needle);
-
-    if (result != NULL) {
-        printf("找到了关键字：%s\n", result);
-    } else {
-        printf("未找到关键字\n");
-    }
-    return 0;
+    initAPI();
+    initView();
+    importStu();
+    setView(MAIN);
+    show();
+    while (1) {} //死循环保持程序运行
 }

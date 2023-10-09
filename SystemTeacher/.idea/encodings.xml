@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/api.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/data.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/cmake-build-debug/data.dat" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>
