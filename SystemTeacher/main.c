@@ -1,7 +1,14 @@
 #include "api.h"
 
 int main() {
-    initAPI();
+    int flag = login();
+
+    switch (flag) {
+        case 0:
+
+    }
+
+    viewStu();
     initView();
     importStu();
     setView(MAIN);
