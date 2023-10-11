@@ -86,7 +86,20 @@ extern Homework Homeworks;
 extern Tutor Tutors;
 extern Student Students;
 extern View QUERY;
+extern View MAINSTU;
+extern View MAINUSER;
+extern View MAINCOURSE;
+extern View MAINTUTOR;
+extern View MAINTEACHER;
+extern View MAINHOMEWORK;
+extern View LOGIN;
 extern View MAIN;
+extern View QUERYSTU;
+extern View QUERYUSER;
+extern View QUERYCOURSE;
+extern View QUERYTEACHER;
+extern View QUERYHOMEWORK;
+extern View QUERYTUTOR;
 extern int CountStu;
 extern int CountUser;
 extern int CountCourse;
@@ -95,6 +108,7 @@ extern int CountHomework;
 extern int CountTutor;
 
 void back(void);
+void sortStuAverage(void);
 void soutUser(int index, User user);
 void soutCourse(int index, Course course);
 void soutTeacher(int index, Teacher teacher);
@@ -107,6 +121,8 @@ void getTeacher(int type, char text[10], int viewNum);
 void getHomework(int type, char text[10], int viewNum);
 void getTutor(int type, char text[10], int viewNum);
 void getUser(int type, char text[10], int viewNum);
+
+void TeaView(void);
 
 void queryStu1(void);
 void queryStu2(void);
@@ -136,9 +152,11 @@ void queryHomework0(void);
 
 void queryTutor1(void);
 void queryTutor2(void);
+void queryTutor3(void);
 void queryTutor0(void);
 
 int login(void);
+void view(void);
 
 void viewUser(void);
 void addUser(void);

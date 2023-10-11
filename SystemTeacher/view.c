@@ -165,7 +165,7 @@ void show() {//显示选项
     swch = 1;
 }
 
-void append(View view, char title[20], void (*function)(void)) {//添加选项
+void append(View view, char title[30], void (*function)(void)) {//添加选项
     Select t = (Select) malloc(sizeof(struct SelectNode));
     t->Index = (view->count)++;
     strcpy(t->Title, title);

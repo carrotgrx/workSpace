@@ -15,7 +15,13 @@ Tutor Tutors;
 
 View QUERY;
 View MAIN;
+View LOGIN;
 int CountStu;
+int CountUser;
+int CountCourse;
+int CountTeacher;
+int CountHomework;
+int CountTutor;
 
 void back(void) { //回到主界面
     setView(QUERY->back);
@@ -52,7 +58,34 @@ void soutStudent(int index, Student student) { //输出单个学生信息
                 student->name, student->class, student->average, student->bad == 0 ? "无" : "有");
 }
 
-void getStudent(int type, char text[10], int viewNum) { //获取学生信息
+void sortStuAverage(void) { //根据绩点由大到小排序
+    int i, count = 0, num;
+    Student p, q, t;
+    p = Students;
+    while(p->Next != NULL) {
+        p = p->Next;
+        count++;
+    }
+    for (i = 0; i < count - 1; ++i) {
+        num = count - i - 1;
+        q = Students->Next;
+        p = q->Next;
+        t = Students;
+        while (num--) {
+            if (q->average < p->average) {
+                q->Next = p->Next;
+                p->Next = q;
+                t->Next = p;
+            }
+            t = t->Next;
+            q = t->Next;
+            p = q->Next;
+        }
+    }
+
+}
+
+void getStudent(int type, char text[30], int viewNum) { //获取学生信息
     int value, i;
     char str[30];
     Student t;
@@ -103,7 +136,7 @@ void getStudent(int type, char text[10], int viewNum) { //获取学生信息
     swch = 2;
 }
 
-void getUser(int type, char text[10], int viewNum) { //获取用户信息
+void getUser(int type, char text[30], int viewNum) { //获取用户信息
     int value, i;
     char str[30];
     User t;
@@ -141,7 +174,7 @@ void getUser(int type, char text[10], int viewNum) { //获取用户信息
     swch = 2;
 }
 
-void getCourse(int type, char text[10], int viewNum) { //获取课程信息
+void getCourse(int type, char text[30], int viewNum) { //获取课程信息
     int value, i;
     char str[30];
     Course t;
@@ -179,7 +212,7 @@ void getCourse(int type, char text[10], int viewNum) { //获取课程信息
     swch = 2;
 }
 
-void getTeacher(int type, char text[10], int viewNum) { //获取教师信息
+void getTeacher(int type, char text[30], int viewNum) { //获取教师信息
     int value, i;
     char str[30];
     Teacher t;
@@ -217,7 +250,7 @@ void getTeacher(int type, char text[10], int viewNum) { //获取教师信息
     swch = 2;
 }
 
-void getHomework(int type, char text[10], int viewNum) { //获取作业信息
+void getHomework(int type, char text[30], int viewNum) { //获取作业信息
     int value, i;
     char str[30];
     Homework t;
@@ -273,7 +306,7 @@ void getHomework(int type, char text[10], int viewNum) { //获取作业信息
     swch = 2;
 }
 
-void getTutor(int type, char text[10], int viewNum) { //获取答疑/辅导信息
+void getTutor(int type, char text[30], int viewNum) { //获取答疑/辅导信息
     int value, i;
     char str[30];
     Tutor t;
@@ -484,11 +517,12 @@ void quit(void) { //退出
 }
 
 int login() {
+    LOGIN = createView();
     int i = 0;
     char username[20], password[20];
     User t;
     CLS();
-    showTitle();
+//    showTitle();
     customPrint(5, Window_Size->X / 2 - 25, 13, "请输入用户名: ");
     scanf("%s", username);
     customPrint(5, Window_Size->X / 2 - 25, 14, "请输入密码: ");
@@ -502,6 +536,30 @@ int login() {
     }
     customPrint(4, Window_Size->X / 2 - 25, 15, "用户名或密码错误");
     gotoxy(0, Window_Size->Y);
+}
+
+void view(void) {
+    MAIN = createView();
+    QUERY = createView();
+    append(MAIN, "用户信息", &viewUser);
+    append(MAIN, "学生信息", &viewStu);
+    append(MAIN, "课程信息", &viewCourse);
+    append(MAIN, "教师信息", &viewTeacher);
+    append(MAIN, "作业信息", &viewHomework);
+    append(MAIN, "答疑/辅导信息", &viewTutor);
+    append(MAIN, "退出", &quit);
+    QUERY->back = MAIN;
+}
+
+void TeaView(void) {
+    MAIN = createView();
+    QUERY = createView();
+    append(MAIN, "学生信息", &viewStu);
+    append(MAIN, "课程信息", &viewCourse);
+    append(MAIN, "作业信息", &viewHomework);
+    append(MAIN, "答疑/辅导信息", &viewTutor);
+    append(MAIN, "退出", &quit);
+    QUERY->back = MAIN;
 }
 
 void viewStu(void) { //初始化学生
@@ -596,7 +654,6 @@ void viewHomework(void) { //初始化作业
     append(QUERY, "根据编号查询", &queryHomework1);
     append(QUERY, "根据课程查询", &queryHomework2);
     append(QUERY, "根据教师查询", &queryHomework3);
-
     append(QUERY, "列出所有信息", &queryHomework0);
     append(QUERY, "返回", &back);
     QUERY->back = MAIN;
