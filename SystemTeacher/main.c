@@ -2,28 +2,23 @@
 
 int main() {
     importUser();
-    int flag = login();
+    initLogin();
     initView();
-    setView(MAIN);
-    show();
+    view();
+    TeaView();
+    viewUser();
+    viewCourse();
+    viewCourse();
+    viewTeacher();
+    viewHomework();
+    viewTutor();
+    viewStudent();
     importCourse();
     importTeacher();
     importHomework();
     importTutor();
-    sortStuAverage();
-    switch (flag) {
-        case 0:
-            view();
-            initView();
-            setView(MAIN);
-            show();
-            break;
-        case 1:
-            TeaView();
-            initView();
-            setView(MAIN);
-            show();
-            break;
-    }
+    importStudent();
+    setView(LOGIN);
+    show();
     while (1) {} //死循环保持程序运行
 }

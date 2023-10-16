@@ -76,6 +76,7 @@ void *getSwitch(void *args) {//多线程读取按键
                 ch = _getch();
                 switch (ch) {
                     case 13:  //回车
+//                        CLS();
                         run();
                         break;
                     case 27:  //ESC
@@ -165,7 +166,7 @@ void show() {//显示选项
     swch = 1;
 }
 
-void append(View view, char title[30], void (*function)(void)) {//添加选项
+void append(View view, char title[30], void (*function)(void)) {//添加选项(无参）
     Select t = (Select) malloc(sizeof(struct SelectNode));
     t->Index = (view->count)++;
     strcpy(t->Title, title);
@@ -178,6 +179,20 @@ void append(View view, char title[30], void (*function)(void)) {//添加选项
         view->Rear = t;
     }
 }
+
+//void append_(View view, char title[30], void (*function)(View)) {//添加选项(有参）
+//    Select t = (Select) malloc(sizeof(struct SelectNode));
+//    t->Index = (view->count)++;
+//    strcpy(t->Title, title);
+//    t->Function = function;
+//    t->Next = NULL;
+//    t->Previous = view->Rear;
+//    if (view->Head == NULL) view->Head = view->Selected = view->Rear = t;
+//    else {
+//        view->Rear->Next = t;
+//        view->Rear = t;
+//    }
+//}
 
 View createView(void) {//创建ui
     View s = (View) malloc(sizeof(struct ViewNode));

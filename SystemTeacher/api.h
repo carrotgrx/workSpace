@@ -79,27 +79,31 @@ typedef struct student {
     Student Next;
 };
 
+extern View LOGIN;
+extern View MENU_USER;
+extern View MENU_TEACHER;
+
+extern View MAIN_USER;
+extern View MAIN_COURSE;
+extern View MAIN_TEACHER;
+extern View MAIN_HOMEWORK;
+extern View MAIN_TUTOR;
+extern View MAIN_STUDENT;
+
+extern View QUERY_USER;
+extern View QUERY_COURSE;
+extern View QUERY_TEACHER;
+extern View QUERY_HOMEWORK;
+extern View QUERY_TUTOR;
+extern View QUERY_STUDENT;
+
 extern User Users;
 extern Course Courses;
 extern Teacher Teachers;
 extern Homework Homeworks;
 extern Tutor Tutors;
 extern Student Students;
-extern View QUERY;
-extern View MAINSTU;
-extern View MAINUSER;
-extern View MAINCOURSE;
-extern View MAINTUTOR;
-extern View MAINTEACHER;
-extern View MAINHOMEWORK;
-extern View LOGIN;
-extern View MAIN;
-extern View QUERYSTU;
-extern View QUERYUSER;
-extern View QUERYCOURSE;
-extern View QUERYTEACHER;
-extern View QUERYHOMEWORK;
-extern View QUERYTUTOR;
+
 extern int CountStu;
 extern int CountUser;
 extern int CountCourse;
@@ -107,29 +111,33 @@ extern int CountTeacher;
 extern int CountHomework;
 extern int CountTutor;
 
-void back(void);
-void sortStuAverage(void);
+extern int flag;
+
+void backUser(void);
+void backCourse(void);
+void backTeacher(void);
+void backHomework(void);
+void backTutor(void);
+void backStudent(void);
+
+void quit(void);
+
 void soutUser(int index, User user);
 void soutCourse(int index, Course course);
 void soutTeacher(int index, Teacher teacher);
 void soutHomework(int index, Homework homework);
 void soutTutor(int index, Tutor tutor);
 void soutStudent(int index, Student student);
-void getStudent(int type, char text[10], int viewNum);
-void getCourse(int type, char text[10], int viewNum);
-void getTeacher(int type, char text[10], int viewNum);
-void getHomework(int type, char text[10], int viewNum);
-void getTutor(int type, char text[10], int viewNum);
-void getUser(int type, char text[10], int viewNum);
 
-void TeaView(void);
+void sortStuGpa(void);
+void sortStuBad(void);
 
-void queryStu1(void);
-void queryStu2(void);
-void queryStu3(void);
-void queryStu4(void);
-void queryStu5(void);
-void queryStu0(void);
+void getUser(int type, char text[30], int viewNum);
+void getCourse(int type, char text[30], int viewNum);
+void getTeacher(int type, char text[30], int viewNum);
+void getHomework(int type, char text[30], int viewNum);
+void getTutor(int type, char text[30], int viewNum);
+void getStudent(int type, char text[30], int viewNum);
 
 void queryUser1(void);
 void queryUser2(void);
@@ -155,58 +163,73 @@ void queryTutor2(void);
 void queryTutor3(void);
 void queryTutor0(void);
 
-int login(void);
+void queryStu1(void);
+void queryStu2(void);
+void queryStu3(void);
+void queryStu4(void);
+void queryStu5(void);
+void queryStu0(void);
+
+void showUser(void);
+void showCourse(void);
+void showTeacher(void);
+void showHomework(void);
+void showTutor(void);
+void showStudent(void);
+
+void login(void);
+void initLogin(void);
 void view(void);
+void TeaView(void);
 
 void viewUser(void);
-void addUser(void);
-void modifyUser(void);
-void delUser(void);
-void queryUser(void);
-void importUser(void);
-void saveUser(void);
-
 void viewCourse(void);
-
-void addCourse(void);
-void modifyCourse(void);
-void delCourse(void);
-void queryCourse(void);
-void importCourse(void);
-void saveCourse(void);
-
 void viewTeacher(void);
-void addTeacher(void);
-void modifyTeacher(void);
-void delTeacher(void);
-void queryTeacher(void);
-void importTeacher(void);
-void saveTeacher(void);
-
 void viewHomework(void);
-void addHomework(void);
-void modifyHomework(void);
-void delHomework(void);
-void queryHomework(void);
-void importHomework(void);
-void saveHomework(void);
-
 void viewTutor(void);
-void addTutor(void);
-void modifyTutor(void);
-void delTutor(void);
-void queryTutor(void);
-void importTutor(void);
-void saveTutor(void);
+void viewStudent(void);
 
-void quit(void);
-void viewStu(void);
-void addStu(void);
-void modifyStu(void);
-void delStu(void);
-void queryStu(void);
-void importStu(void);
-void saveStu(void);
+void addUser(void);
+void addCourse(void);
+void addTeacher(void);
+void addHomework(void);
+void addTutor(void);
+void addStudent(void);
+
+void modifyUser(void);
+void modifyCourse(void);
+void modifyTeacher(void);
+void modifyHomework(void);
+void modifyTutor(void);
+void modifyStudent(void);
+
+void delUser(void);
+void delCourse(void);
+void delTeacher(void);
+void delHomework(void);
+void delTutor(void);
+void delStudent(void);
+
+void queryUser(void);
+void queryCourse(void);
+void queryTeacher(void);
+void queryHomework(void);
+void queryTutor(void);
+void queryStudent(void);
+
+void importUser(void);
+void importCourse(void);
+void importTeacher(void);
+void importHomework(void);
+void importTutor(void);
+void importStudent(void);
+
+void saveUser(void);
+void saveCourse(void);
+void saveTeacher(void);
+void saveHomework(void);
+void saveTutor(void);
+void saveStudent(void);
 
 int customPrint(short c, int x, int y, const char * __restrict__ _Format, ...);
 
