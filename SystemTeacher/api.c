@@ -1526,7 +1526,7 @@ void saveStudent(void) {//±£´æ
     int i = 0;
     FILE *file = fopen("Stu.txt", "w");
 
-    fprintf(file, "%d\n", CountUser);
+    fprintf(file, "%d\n", CountStu);
     for (t = Students; t->Next != NULL; t = t->Next) {
         fprintf(file, "%d %s %s %d ", t->Next->id, t->Next->name, t->Next->emile, t->Next->class);
         for (int j = 0; j < 10; ++j) {
